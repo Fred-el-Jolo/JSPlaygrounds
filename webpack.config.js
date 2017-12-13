@@ -20,7 +20,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
+    disableHostCheck: true,
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    publicPath: '/JSPlayground/'
   }
 };

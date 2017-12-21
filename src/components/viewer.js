@@ -7,11 +7,7 @@ import SplitPane from 'react-split-pane';
 class Viewer extends Component {
   evaluateExpressions(expressions) {
     const formattedExpressions = _.mapValues(expressions, expression => {
-
-      const consoleRegexp = /(console\.log\()(.*)(\));/ig;
-      const updatedExpression = expression.replace(consoleRegexp, `'console.log : ' + $2`);
-
-      const result = eval(updatedExpression);
+      const result = eval(expression);
 
       if (result && result.type) {
         return result;
